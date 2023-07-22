@@ -1,5 +1,14 @@
 import type { Scope } from "$types/index";
 
+// In the case we don't use Type Script, we can use the following:
+// (this is not so different from JSDoc)
+/**
+ * @returns SVG coordinate for a given data point: { svgX: number; svgY: number }
+ * @param x The data point's x value: number.
+ * @param y The data point's y value: number.
+ * @param xStep The x step: number.
+ * @param yStep The y step: number.
+ */
 // Function to convert data points to SVG coordinates
 export function getSVGCoordinates(
   x: number,

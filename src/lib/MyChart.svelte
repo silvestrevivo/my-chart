@@ -232,6 +232,11 @@
 
   {#if isLockable}
     <div>
+      <!-- this button component should be inherit from the MyChart component
+      instead of being imported from the lib folder.
+      The purpose here is to show how to use the lockable feature
+      and how to import a group of components from the lib folder
+      using a index.ts + alias to make easier copy and paste of imports -->
       <Button text={buttonText} on:click={toggleLock} />
       <p>{L.lockButtonText}</p>
     </div>
