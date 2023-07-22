@@ -46,6 +46,15 @@
     redrawGraph();
   }
 
+  // In the case we don't use Type Script, we can use the following:
+  // (this is not so different from JSDoc)
+  /**
+   * @returns SVG coordinate for a given data point: { svgX: number; svgY: number }
+   * @param svg: SVG HTML element.
+   * @param data: DataPoint[]
+   * @param xStep The x step: number.
+   * @param yStep The y step: number.
+   */
   function drawGraphLine(svg, data, xStep, yStep) {
     // Create the SVG path element
     const graphLine = document.createElementNS(
