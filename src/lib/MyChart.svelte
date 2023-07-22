@@ -8,6 +8,7 @@
     isPointInsideSquare,
     addTextToSVG,
   } from "$utils/chart";
+  import { L } from "$modules/localization";
   import type { DataPoint, Scope } from "$types/index";
 
   // First: define props
@@ -26,10 +27,6 @@
   const chartWidth = 360;
   const chartHeight = 240;
 
-  // Define button text status
-  const UNLOCK = "Unlock all dots";
-  const LOCK = "Lock all dots";
-
   // Third: define component state
   let svgElement: SVGElement;
   let locked = false;
@@ -41,7 +38,7 @@
   });
 
   // Fifth: declare reactive variables/statements
-  $: buttonText = locked ? UNLOCK : LOCK;
+  $: buttonText = locked ? L.unlock : L.lock;
 
   // Sixth: declare functions component
   function toggleLock() {
@@ -236,7 +233,7 @@
   {#if isLockable}
     <div>
       <Button text={buttonText} on:click={toggleLock} />
-      <p>Click on each dot to lock them individually</p>
+      <p>{L.lockButtonText}</p>
     </div>
   {/if}
 </div>
